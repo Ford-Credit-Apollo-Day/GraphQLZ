@@ -5,7 +5,7 @@ type Query {
   """
   Get a specific order by id. Meant to be used for a detailed view of an order
   """
-  order(id: ID!): Order
+  order(id: ID!): Order @authenticated
 }
 
 """
@@ -36,10 +36,5 @@ type User @key(fields: "id", resolvable: false) {
 type ProductVariant @key(fields: "id", resolvable: false) {
   id: ID!
 }
-type Query {
-  """
-  Get a specific order by id. Meant to be used for a detailed view of an order
-  """
-  order(id: ID!): Order @authenticated
-}
+
 
